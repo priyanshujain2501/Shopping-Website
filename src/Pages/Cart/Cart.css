@@ -1,0 +1,145 @@
+.cart{
+    width: 100%;
+    height: 100%;
+    margin: 50px 0px 100px 0px;
+}
+
+.cart-heading{
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    place-items: center;
+    margin: 0px 100px;
+    border: 2px solid gray;
+    padding: 10px 10px;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.cart-product-item{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+    margin: 20px 100px;
+    border: 2px solid gray;
+    padding: 20px 10px;
+    color: black;
+    font-size: 20px;
+}
+
+.cart-img{
+    width: 60px;
+    height: 60px;
+}
+
+.cross-icon{
+    font-size: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    color: black;
+}
+
+.cross-icon:hover{
+    transform: scale(1.1);
+    transition-duration: calc(500ms);
+    color: red;
+}
+
+.cart-checkout{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin: 20px 0px;
+    position: relative;
+}
+
+.cart-total{
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    border: 2px solid black;
+    padding: 10px 30px;
+    font-size: 24px;
+    gap: 10px;
+    margin: 0px 100px;
+}
+
+.cart-checkout-btn{
+    margin: 20px 100px;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.cart-checkout-btn:hover{
+    transform: scale(1.1);
+    background-color: skyblue;
+    transition-duration: calc(500ms);
+    color: white;
+}
+
+.popup{
+    position: absolute;
+    top: 30px;
+    right: 40%;
+    background-color: #d1fae5;
+    color: #065f46;
+    font-size: 30px;
+    margin: 0px 0px;
+    padding: 15px 15px;
+    border-radius: 20px;
+}
+
+.cart-empty{
+    position: absolute;
+    top: 30px;
+    right: 45%;
+    color: gray;
+    font-size: 20px;
+}
+
+@media (max-width:600px){
+
+    .cart {
+        margin: 0px;
+    }
+
+    .cart-heading {
+        margin: 40px 10px;
+        padding: 10px 10px;
+    }
+
+    .cart-product-item {
+        margin: 20px 10px;
+        padding: 20px 10px;
+    }
+
+    .cart-checkout-btn {
+        margin: 20px 10px;
+    }
+
+    .cart-total {
+        padding: 10px 30px;
+        margin: 0px 10px;
+    }
+
+    .popup {
+        display: flex;
+        justify-content: center;
+        right: 30%;
+        top: 30px;
+        font-size: 10px;
+        margin: 0px 0px;
+        padding: 15px 15px;
+    }
+
+    .cart-empty {
+        position: absolute;
+        top: 30px;
+        right: 35%;
+        color: gray;
+        font-size: 20px;
+    }
+
+}
