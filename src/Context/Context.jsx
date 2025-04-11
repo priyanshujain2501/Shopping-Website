@@ -8,8 +8,7 @@ function ContextProvider({children}) {
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
     const [cartItems, setCartItems] = useState({});
-
-    const token = localStorage.getItem("token");
+    const [token,setToken] = useState(null)
 
     const fetchAllCategories = async () => {
 
@@ -65,6 +64,16 @@ function ContextProvider({children}) {
 
     }
 
+    const login = (newToken) => {
+        localStorage.setItem("token",newToken);
+        setToken(newToken);
+    }
+
+    const logout = () => {
+        localStorage.removeItem("token");
+        setToken(null);
+    }
+
     useEffect(()=>{
         fetchAllCategories()
     },[])
@@ -79,6 +88,9 @@ function ContextProvider({children}) {
         removeFromCart,
         getCartTotalAmt,
         token,
+        login,
+        logout,
+        logout,
     }
 
     return(

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import './Navbar.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { BsCart3 } from "react-icons/bs";
@@ -6,7 +6,7 @@ import { Context } from '../../Context/Context';
 
 function Navbar() {
 
-  const {cartItems,token} = useContext(Context);
+  const {cartItems,token,login,logout} = useContext(Context);
 
   const navigate = useNavigate();
 
@@ -24,14 +24,15 @@ function Navbar() {
 
   const handleLogoutBtn = () => {
 
-    localStorage.removeItem("token")
+    logout();
     navigate("/login");
 
   }
 
-  useEffect(() => {
-    countCartItem();
-  }, [countCartItem()])
+  const handleLoginBtn = () => {
+    navigate("/login")
+  }
+
 
   return (
     <div className='navbar'>
@@ -56,6 +57,9 @@ function Navbar() {
             </Link>
 
             {token && <button onClick={handleLogoutBtn} className='logout-btn'>Logout</button>}
+
+            {!token && <button onClick={handleLoginBtn} className='logout-btn'>Login</button>}
+
 
           </div>
 
